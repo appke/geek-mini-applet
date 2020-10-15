@@ -13,7 +13,8 @@
 }
 
 .userinfo-nickname {
-  color: #aaa;
+  /* color: #aaa; */
+  color: red;
 }
 
 .usermotto {
