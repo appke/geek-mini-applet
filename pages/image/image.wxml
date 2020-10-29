@@ -1,0 +1,6 @@
+<!--pages/image/image.wxml-->
+<text>pages/image/image.wxml</text>
+
+<image src="http://mmbiz.qpic.cn/mmbiz_png/TiceOI349JAaibpOtVe0wzicrzf9Q1t0EbHh31lSoQVSVHia4kbpkWnzjpd1ajf1xahVun0rrce1Pw6mXkE0wOcOEw/0?wx_fmt=png"/>
+<button bindtap="chosePhoto">选中相册</button>
+<image src="{{imgPath}}" show-menu-by-longpress/>
