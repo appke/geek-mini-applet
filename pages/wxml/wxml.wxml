@@ -1,0 +1,15 @@
+<!--pages/wxml/wxml.wxml-->
+<text>pages/wxml/wxml.wxml</text>
+<view>{{nowTime}}</view>
+
+<view wx:if="{{isShow}}">哈哈哈</view>
+
+<button size="mini" bindtap="addScore">分数递增6分</button>
+<view wx:if="{{score >= 90}}">优秀</view>
+<view wx:elif="{{score >= 80}}" bindtap="addScore">良好</view>
+<view wx:elif="{{score >= 60}}">及格</view>
+<view wx:else>不及格</view>
+
+<wxs src="./format.wxs" module="format"/>
+<view>{{ format.priceFormat(price, 2) }}</view>
+<view>{{ format.dateFormat(time, "yyyy/MM/dd hh:mm:ss") }}</view>
