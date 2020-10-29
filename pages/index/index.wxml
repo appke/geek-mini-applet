@@ -6,6 +6,13 @@
       <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
       <text class="userinfo-nickname">{{userInfo.nickName}}</text>
     </block>
+    
+    <!-- 获取用户信息 -->
+    <button size="mini" type="primary" open-type="getUserInfo" bindgetuserinfo="handleGetUserInfo">获取授权</button>
+
+<!-- 展示用户信息 -->
+    <open-data type="userNickName"></open-data>
+    <open-data type="userAvatarUrl"></open-data>
   </view>
   <view class="usermotto">
     <text class="user-motto">{{motto}}</text>
