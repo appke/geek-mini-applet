@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/sharephoto/sharephoto",
     "pages/wxml/wxml",
     "pages/image/image",
     "pages/index/index",

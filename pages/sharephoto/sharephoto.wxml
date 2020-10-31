@@ -1,0 +1,9 @@
+<!--pages/sharephoto/sharephoto.wxml-->
+<text>pages/sharephoto/sharephoto.wxml</text>
+
+<button open-type="share">分享</button>
+
+
+<my-prop/>
+<my-prop/>
+<my-prop/>

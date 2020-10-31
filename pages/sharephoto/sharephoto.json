@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "my-prop": "/components/my-prop/my-prop"
+  }
+}
