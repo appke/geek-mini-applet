@@ -10,3 +10,6 @@
 
 <view style="margin-top:40px;"> 当前数字是 {{ counter }}</view>
 <my-event bind:increment="handleCrement"/>
+
+<w-tab-control titles="{{['流行', '新款', '精选']}}" bind:itemclick="handleTabClick"/>
+<w-tab-control/>
