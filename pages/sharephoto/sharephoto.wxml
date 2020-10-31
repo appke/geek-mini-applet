@@ -5,5 +5,8 @@
 
 
 <my-prop/>
-<my-prop/>
-<my-prop/>
+<my-prop title="我是标题222"/>
+<my-prop title="我是标题3333"/>
+
+<view style="margin-top:40px;"> 当前数字是 {{ counter }}</view>
+<my-event bind:increment="handleCrement"/>
