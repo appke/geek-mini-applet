@@ -1,0 +1,2 @@
+<!--components/my-sel/my-sel.wxml-->
+<view>组建内的数据 {{counter}}</view>

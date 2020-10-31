@@ -13,3 +13,6 @@
 
 <w-tab-control titles="{{['流行', '新款', '精选']}}" bind:itemclick="handleTabClick"/>
 <w-tab-control/>
+
+<my-sel class="sel-class" id="sel-id"/>
+<button size="mini" bind:tap="handleCrementCpn">页面改变组件数据</button>

@@ -19,6 +19,19 @@ Page({
   },
   handleTabClick(event) {
     console.log(event)
+  },
+  handleCrementCpn() {
+    // 1.拿到组件对象
+    const my_sel = this.selectComponent("#sel-id")
+    console.log(my_sel)
+
+    // 2.通过setData修改组件内部数据(不合理)
+    // my_sel.setData({
+    //   counter: my_sel.data.counter + 1
+    // })
+
+    // 3.通过方法对数据进行修改
+    my_sel.incrementCounter(10)
   }
 })
 // 
