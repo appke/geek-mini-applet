@@ -4,7 +4,7 @@
   display: flex;
   margin-top: 30rpx;
   padding-bottom: 30rpx;
-  border-bottom: 16rpx solid #eee;
+  border-bottom: 14rpx solid #eee;
 }
 .recommend-item {
   flex: 1;
@@ -17,7 +17,7 @@
 }
 
 .recommend-item view {
-  font-size: 30rpx;
+  font-size: 28rpx;
   color: #666;
   margin-bottom: 10rpx;
 }

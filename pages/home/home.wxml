@@ -1,6 +1,12 @@
 <!--pages/home/home.wxml-->
-<!-- 轮播图 -->
+<!-- 1.轮播图 -->
 <w-swiper banners="{{banners}}" />
 
-<!-- 推荐数据 -->
-<w-recommend recommends="{{recommends}}"/>
+<!-- 2.推荐数据 -->
+<w-recommend recommends="{{recommends}}" />
+
+<!-- 3.本周流行 -->
+<w-popular/>
+
+<!-- 4.流行/新款/精选 -->
+
