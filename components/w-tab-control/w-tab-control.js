@@ -11,7 +11,6 @@ Component({
   },
   methods: {
     handleItemClick(event) {
-      console.log(event)
       // 1.取出index
       const index = event.currentTarget.dataset.index
       // 2.修改currentIndex

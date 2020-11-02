@@ -8,6 +8,10 @@
 <!-- 3.本周流行 -->
 <w-popular/>
 
-<!-- 4.流行/新款/精选 -->
-<w-tab-control titles="{{['流行', '新款', '精选']}}"/>
+<!-- 4.w-tab-control -->
+<w-tab-control titles="{{titles}}" bind:itemclick="handleItemClick"/>
 
+<!-- 4.商品数据展示 -->
+<view>
+
+</view>
