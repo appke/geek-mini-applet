@@ -10,13 +10,22 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    banners: [],
+    recomments: []
   },
 
   onLoad: function (options) {
     // 请求轮播图、以及推荐数据
     getMultiData().then(res => {
       console.log('res----', res)
+      // 取出数据
+      const banners = res.data.data.banner.list
+      const recommends = res.data.data.recommend.list
+      
+      this.setData({
+        banners,
+        recomments: recommends
+      })
     })
   },
 
