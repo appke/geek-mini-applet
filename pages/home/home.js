@@ -11,7 +11,7 @@ Page({
    */
   data: {
     banners: [],
-    recomments: []
+    recommends: []
   },
 
   onLoad: function (options) {
@@ -24,7 +24,7 @@ Page({
       
       this.setData({
         banners,
-        recomments: recommends
+        recommends: recommends
       })
     })
   },
