@@ -6,6 +6,8 @@ import {
   getGoodsData
 } from '../../service/home.js'
 
+const types = ['pop', 'new', 'sell']
+
 Page({
   /**
    * 页面的初始数据
@@ -14,12 +16,12 @@ Page({
     banners: [],
     recommends: [],
     titles: ['流行', '新款', '精选'],
-    currentIndex: 0,
-    goods:{
+    goods: {
       pop: {page:0, list:[]},
       new: {page:0, list:[]},
       sell: {page:0, list:[]}
-    }
+    }, 
+    currentType: 'pop'
   },
 
   onLoad: function (options) {
@@ -28,7 +30,7 @@ Page({
     // 请求商品数据
     this._getGoodsData('new')
     this._getGoodsData('pop')
-    // this._getGoodsData('sell')
+    this._getGoodsData('sell')
     
   },
 
@@ -74,15 +76,14 @@ Page({
     // 1.取出index
     const index = event.detail.index 
     console.log(index)
-
     this.setData({
       currentIndex : index
     }) 
 
-    // 2.请求相应商品数据
-
-
-
+    // 2.修改currentType
+    this.setData({
+      currentType: types[index]
+    })
   }
 
 })

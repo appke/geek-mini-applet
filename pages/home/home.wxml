@@ -6,12 +6,15 @@
 <w-recommend recommends="{{recommends}}" />
 
 <!-- 3.本周流行 -->
-<w-popular/>
+<w-popular />
 
 <!-- 4.w-tab-control -->
-<w-tab-control titles="{{titles}}" bind:itemclick="handleItemClick"/>
+<w-tab-control titles="{{titles}}" bind:itemclick="handleItemClick" />
 
-<!-- 4.商品数据展示 -->
-<view>
-
+<!-- 5.商品数据展示 -->
+<view class="goods">
+  <block wx:for="{{goods[currentType].list}}" wx:key="index">
+    <view>{{item.title}}</view>
+    <view>------</view>
+  </block>
 </view>
