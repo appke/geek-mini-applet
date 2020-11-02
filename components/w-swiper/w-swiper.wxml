@@ -7,8 +7,8 @@
         indicator-dots 
         indicator-active-color="#ff5777">
   <block wx:for="{{banners}}" wx:key="index">
-  <swiper-item>
-    <image class="swiper-image" src="{{item.image}}" mode="widthFix"/>
-  </swiper-item>
+    <swiper-item>
+      <image class="swiper-image" src="{{item.image}}" mode="widthFix"/>
+    </swiper-item>
   </block>
 </swiper>
