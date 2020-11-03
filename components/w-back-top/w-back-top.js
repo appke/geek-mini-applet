@@ -19,7 +19,6 @@ Component({
    */
   methods: {
     handleBackTop() {
-      // this.triggerEvent("backtop", {}, {})
       wx.pageScrollTo({
         scrollTop: 0,
       })

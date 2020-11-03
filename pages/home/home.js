@@ -15,12 +15,22 @@ Page({
     recommends: [],
     titles: ['流行', '新款', '精选'],
     goods: {
-      pop: {page:0, list:[]},
-      new: {page:0, list:[]},
-      sell: {page:0, list:[]}
-    }, 
+      pop: {
+        page: 0,
+        list: []
+      },
+      new: {
+        page: 0,
+        list: []
+      },
+      sell: {
+        page: 0,
+        list: []
+      }
+    },
     currentType: 'pop',
-    showBackTop: false
+    showBackTop: false,
+    isTabFixed: false
   },
 
   onLoad: function (options) {
@@ -54,7 +64,7 @@ Page({
       const list = res.data.list
       // 设置数据
       const goods = this.data.goods
-      goods[type].list.push(...list) 
+      goods[type].list.push(...list)
       goods[type].page = page
       this.setData({
         goods: goods
@@ -62,13 +72,13 @@ Page({
     })
   },
 
-  handleItemClick(event) {
+  handleTabClick(event) {
     // 1.取出index
-    const index = event.detail.index 
+    const index = event.detail.index
     console.log(index)
     this.setData({
-      currentIndex : index
-    }) 
+      currentIndex: index
+    })
     // 2.修改currentType
     this.setData({
       currentType: types[index]
@@ -90,7 +100,26 @@ Page({
         showBackTop: flag
       })
     }
+
+    // 3.修改
+  },
+
+  // onShow() {
+  //   setTimeout(() => {
+  //     wx.createSelectorQuery().select('#tab-control').boundingClientRect(rect => {
+  //       console.log('rect----', rect)
+  //     }).exec()
+  //   }, 1000);
+  // }
+
+  handleImageLoad() {
+    wx.createSelectorQuery().select('#tab-control').boundingClientRect(rect => {
+      console.log('rect----', rect)
+      
+
+    }).exec()
   }
+
 })
 
 /*
@@ -116,4 +145,4 @@ Page({
       })
     })
   },
-*/ 
+*/

@@ -3,13 +3,14 @@
 <w-swiper banners="{{banners}}" />
 
 <!-- 2.推荐数据 -->
-<w-recommend recommends="{{recommends}}" />
+<w-recommend recommends="{{recommends}}" bind:imageload="handleImageLoad"/>
 
 <!-- 3.本周流行 -->
 <w-popular />
 
 <!-- 4.w-tab-control -->
-<w-tab-control titles="{{titles}}" bind:tabclick="handleItemClick" />
+<w-tab-control titles="{{titles}}" bind:tabclick="handleTabClick" class="{{isTabFixed ? 'fixed' : ''}}" id="tab-control"/>
+<w-tab-control titles="{{titles}}" wx:if="{{isTabFixed}}"/>
 
 <!-- 5.商品数据展示 -->
 <w-goods list="{{goods[currentType].list}}"/>
