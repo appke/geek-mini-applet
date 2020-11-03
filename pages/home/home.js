@@ -71,9 +71,11 @@ Page({
       currentType: types[index]
     })
   },
-  // onReachBottom() {
-  //   console.log('------', onReachBottom)
-  // }
+  onReachBottom() {
+    console.log('------ onReachBottom')
+    // 上拉加载更多
+    this._getGoodsData(this.data.currentType)
+  }
 })
 
 /*
