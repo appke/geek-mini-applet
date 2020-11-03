@@ -5,13 +5,9 @@ import {
   getMultiData,
   getGoodsData
 } from '../../service/home.js'
-
 const types = ['pop', 'new', 'sell']
 
 Page({
-  /**
-   * 页面的初始数据
-   */
   data: {
     banners: [],
     recommends: [],
@@ -39,7 +35,6 @@ Page({
       // 取出数据
       const banners = res.data.banner.list
       const recommends = res.data.recommend.list
-
       this.setData({
         banners,
         recommends: recommends
@@ -71,7 +66,6 @@ Page({
     this.setData({
       currentIndex : index
     }) 
-
     // 2.修改currentType
     this.setData({
       currentType: types[index]

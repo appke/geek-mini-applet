@@ -1,12 +1,12 @@
 <!--pages/home/home.wxml-->
 <!-- 1.轮播图 -->
-<w-swiper banners="{{banners}}" />
+<!-- <w-swiper banners="{{banners}}" /> -->
 
 <!-- 2.推荐数据 -->
-<w-recommend recommends="{{recommends}}" />
+<!-- <w-recommend recommends="{{recommends}}" /> -->
 
 <!-- 3.本周流行 -->
-<w-popular />
+<!-- <w-popular /> -->
 
 <!-- 4.w-tab-control -->
 <w-tab-control titles="{{titles}}" bind:itemclick="handleItemClick" />
@@ -14,7 +14,6 @@
 <!-- 5.商品数据展示 -->
 <view class="goods">
   <block wx:for="{{goods[currentType].list}}" wx:key="index">
-    <view>{{item.title}}</view>
-    <view>------</view>
+    <w-goods-item class="goods-item" item="{{item}}"/>
   </block>
 </view>
