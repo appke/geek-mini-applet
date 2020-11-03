@@ -30,7 +30,8 @@ Page({
     },
     currentType: 'pop',
     showBackTop: false,
-    isTabFixed: false
+    isTabFixed: false,
+    tabScrollTop: 0
   },
 
   onLoad: function (options) {
@@ -101,7 +102,13 @@ Page({
       })
     }
 
-    // 3.修改
+    // 3.修改 isTabFixed 属性
+    const tabFlag = scrollTop >= this.data.tabScrollTop
+    if (tabFlag != this.data.isTabFixed) {
+      this.setData({
+        isTabFixed: tabFlag
+      })
+    }
   },
 
   // onShow() {
@@ -115,11 +122,9 @@ Page({
   handleImageLoad() {
     wx.createSelectorQuery().select('#tab-control').boundingClientRect(rect => {
       console.log('rect----', rect)
-      
-
+      this.data.tabScrollTop = rect.top
     }).exec()
   }
-
 })
 
 /*

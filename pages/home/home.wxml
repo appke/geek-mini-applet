@@ -10,7 +10,8 @@
 
 <!-- 4.w-tab-control -->
 <w-tab-control titles="{{titles}}" bind:tabclick="handleTabClick" class="{{isTabFixed ? 'fixed' : ''}}" id="tab-control"/>
-<w-tab-control titles="{{titles}}" wx:if="{{isTabFixed}}"/>
+<!-- 4.1 占位的w-tab-control -->
+<!-- <w-tab-control titles="{{titles}}" wx:if="{{isTabFixed}}"/> -->
 
 <!-- 5.商品数据展示 -->
 <w-goods list="{{goods[currentType].list}}"/>
