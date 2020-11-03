@@ -31,15 +31,14 @@ Page({
     this._getGoodsData('new')
     this._getGoodsData('pop')
     this._getGoodsData('sell')
-    
   },
 
   _getMultiData() {
     getMultiData().then(res => {
       console.log('banners----', res)
       // 取出数据
-      const banners = res.data.data.banner.list
-      const recommends = res.data.data.recommend.list
+      const banners = res.data.banner.list
+      const recommends = res.data.recommend.list
 
       this.setData({
         banners,
@@ -53,21 +52,14 @@ Page({
     const page = this.data.goods[type].page + 1
     getGoodsData(type, page).then(res => {
       console.log(type, '----', res)
-
       // 取出数据
-      const list = res.data.data.list
-
-      // 将数据设置到goods中对应type中
-      // this.data.goods[type].list.push(...list)
-
-      const oldList = this.data.goods[type].list
-      oldList.push(...list) //把数组展开塞进去
-      // 将数据设置到data中的goods中, 拼接类型
-      const typeKey = `goods.${type}.list`
-      const pageKey = `goods.${type}.page`
+      const list = res.data.list
+      // 设置数据
+      const goods = this.data.goods
+      goods[type].list.push(...list) 
+      goods[type].page = page
       this.setData({
-        [typeKey]: oldList,
-        [pageKey]: page
+        goods: goods
       })
     })
   },
@@ -84,6 +76,33 @@ Page({
     this.setData({
       currentType: types[index]
     })
-  }
-
+  },
+  // onReachBottom() {
+  //   console.log('------', onReachBottom)
+  // }
 })
+
+/*
+ _getGoodsData(type) {
+    // 获取页码
+    const page = this.data.goods[type].page + 1
+    getGoodsData(type, page).then(res => {
+      console.log(type, '----', res)
+      // 取出数据
+      const list = res.data.list
+
+      // 将数据设置到goods中对应type中
+      // this.data.goods[type].list.push(...list)
+
+      const oldList = this.data.goods[type].list
+      oldList.push(...list) //把数组展开塞进去
+      // 将数据设置到data中的goods中, 拼接类型
+      const typeKey = `goods.${type}.list`
+      const pageKey = `goods.${type}.page`
+      this.setData({
+        [typeKey]: oldList,
+        [pageKey]: page
+      })
+    })
+  },
+*/ 
