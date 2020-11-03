@@ -18,7 +18,7 @@ Component({
         currentIndex: index
       })
       // 3.通知页面内部的点击事件
-      this.triggerEvent("itemclick", {
+      this.triggerEvent("tabclick", {
         index,
         title: this.properties.titles[index]
       }, {})

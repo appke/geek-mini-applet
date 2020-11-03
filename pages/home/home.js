@@ -5,7 +5,9 @@ import {
   getMultiData,
   getGoodsData
 } from '../../service/home.js'
+
 const types = ['pop', 'new', 'sell']
+const TOP_DISTANCE = 1000
 
 Page({
   data: {
@@ -17,7 +19,8 @@ Page({
       new: {page:0, list:[]},
       sell: {page:0, list:[]}
     }, 
-    currentType: 'pop'
+    currentType: 'pop',
+    showBackTop: false
   },
 
   onLoad: function (options) {
@@ -72,9 +75,21 @@ Page({
     })
   },
   onReachBottom() {
-    console.log('------ onReachBottom')
     // 上拉加载更多
     this._getGoodsData(this.data.currentType)
+  },
+  onPageScroll(options) {
+    // console.log(options)
+    // 1.取出scrollTop
+    const scrollTop = options.scrollTop
+
+    // 2.修改showBackTop属性
+    const flag = scrollTop >= TOP_DISTANCE
+    if (flag != this.data.showBackTop) {
+      this.setData({
+        showBackTop: flag
+      })
+    }
   }
 })
 
